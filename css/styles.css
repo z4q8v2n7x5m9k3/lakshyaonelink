@@ -1,6 +1,6 @@
 /* ==========================================================================
    Lakshya Kaushik — Seamless Edge-to-Edge White Artist Page
-   Full Screen Native Mobile Feel • Zero Nested Card Borders
+   Full Screen Native Mobile Feel • Custom Gradient Borders & Depth
    ========================================================================== */
 
 :root {
@@ -18,9 +18,6 @@
 
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  --shadow-tile: 0 3px 14px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
-  --shadow-tile-hover: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
 }
 
 *, *::before, *::after {
@@ -69,7 +66,7 @@ body {
   margin-bottom: 24px;
 }
 
-/* Premium Minimal Status Indicator (No cheap green tint) */
+/* Premium Minimal Status Indicator */
 .status-indicator {
   display: inline-flex;
   align-items: center;
@@ -203,7 +200,7 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* T-Series Academy Badge (No Circle, No Background Behind Image) */
+/* T-Series Academy Badge (No Circle, Clean Logo) */
 .tseries-pill {
   display: inline-flex;
   align-items: center;
@@ -264,11 +261,11 @@ body {
   flex-shrink: 0;
 }
 
-/* Direct Action Deck (Full Width, Easy Tap Targets) */
+/* Direct Action Deck (Custom Gradient Borders & Depth) */
 .action-deck {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 14px;
   margin-top: 28px;
   width: 100%;
 }
@@ -279,27 +276,82 @@ body {
   gap: 15px;
   padding: 14px 18px;
   border-radius: 22px;
-  background: var(--bg-tile);
-  border: 1px solid var(--border-subtle);
   text-decoration: none;
   color: var(--text-main);
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-tile);
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   width: 100%;
 }
 
 .action-tile:hover {
-  background: var(--bg-tile-hover);
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-tile-hover);
-  transform: translateY(-2px);
+  transform: translateY(-2.5px);
 }
 
 .action-tile:active {
   transform: scale(0.985);
 }
 
+/* 1. Instagram Tile: Custom Instagram Gradient Border & Depth */
+.action-instagram {
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(240, 148, 51, 0.45), rgba(225, 48, 108, 0.5), rgba(188, 24, 136, 0.45)) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: 
+    0 4px 18px -2px rgba(225, 48, 108, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.action-instagram:hover {
+  background: 
+    linear-gradient(#fafbfc, #fafbfc) padding-box,
+    linear-gradient(135deg, rgba(240, 148, 51, 0.75), rgba(225, 48, 108, 0.8), rgba(188, 24, 136, 0.75)) border-box;
+  box-shadow: 
+    0 10px 28px -4px rgba(225, 48, 108, 0.2),
+    0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* 2. WhatsApp Tile: Custom WhatsApp Green Gradient Border & Depth */
+.action-whatsapp {
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(37, 211, 102, 0.55), rgba(18, 140, 126, 0.45)) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: 
+    0 4px 18px -2px rgba(37, 211, 102, 0.1),
+    0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.action-whatsapp:hover {
+  background: 
+    linear-gradient(#fafbfc, #fafbfc) padding-box,
+    linear-gradient(135deg, rgba(37, 211, 102, 0.85), rgba(18, 140, 126, 0.75)) border-box;
+  box-shadow: 
+    0 10px 28px -4px rgba(37, 211, 102, 0.22),
+    0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* 3. Call Direct Tile: Custom Blue Gradient Border & Depth */
+.action-call {
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, rgba(56, 189, 248, 0.55), rgba(2, 132, 199, 0.5)) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: 
+    0 4px 18px -2px rgba(2, 132, 199, 0.1),
+    0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.action-call:hover {
+  background: 
+    linear-gradient(#fafbfc, #fafbfc) padding-box,
+    linear-gradient(135deg, rgba(56, 189, 248, 0.85), rgba(2, 132, 199, 0.8)) border-box;
+  box-shadow: 
+    0 10px 28px -4px rgba(2, 132, 199, 0.22),
+    0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* Icon Box & SVGs */
 .tile-icon-box {
   width: 44px;
   height: 44px;
@@ -307,7 +359,6 @@ body {
   border-radius: 14px;
   display: grid;
   place-items: center;
-  overflow: hidden;
   transition: transform 0.2s ease;
 }
 
@@ -315,24 +366,12 @@ body {
   transform: scale(1.06);
 }
 
-.tile-official-img {
+.tile-official-svg {
   width: 44px;
   height: 44px;
-  object-fit: contain;
-  border-radius: 14px;
   display: block;
-}
-
-/* Official Call Icon Box */
-.icon-call-box {
-  background: #0284c7;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-}
-
-.call-svg-icon {
-  width: 21px;
-  height: 21px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .insta-gradient-label {
@@ -340,21 +379,6 @@ body {
   background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.action-instagram:hover {
-  border-color: rgba(221, 42, 123, 0.35);
-  box-shadow: 0 8px 24px -4px rgba(221, 42, 123, 0.12);
-}
-
-.action-whatsapp:hover {
-  border-color: rgba(37, 211, 102, 0.35);
-  box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.12);
-}
-
-.action-call:hover {
-  border-color: rgba(2, 132, 199, 0.35);
-  box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.12);
 }
 
 /* Tile Copy Text */
@@ -403,45 +427,51 @@ body {
   transform: translateX(3px);
 }
 
-/* Save Contact Button (Clean, Refined, High-End) */
+/* Save Contact Button (Clean Luxury Gradient with Haptic Depth) */
 .vcard-section {
-  margin-top: 22px;
+  margin-top: 24px;
   width: 100%;
 }
 
 .btn-save-vcard {
   width: 100%;
-  height: 52px;
+  height: 54px;
   border-radius: 9999px;
-  background: #ffffff;
-  border: 1.5px solid #0f172a;
-  color: #0f172a;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #0f172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  box-shadow: 
+    0 10px 24px -4px rgba(15, 23, 42, 0.26),
+    inset 0 1px 1px rgba(255, 255, 255, 0.22);
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .contact-user-svg {
   width: 20px;
   height: 20px;
-  stroke: currentColor;
-  transition: stroke 0.2s ease;
+  stroke: #ffffff;
+  transition: transform 0.2s ease;
 }
 
 .btn-save-vcard:hover {
-  background: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -4px rgba(15, 23, 42, 0.18);
+  box-shadow: 
+    0 14px 28px -4px rgba(15, 23, 42, 0.32),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-save-vcard:hover .contact-user-svg {
+  transform: scale(1.08);
 }
 
 .btn-save-vcard:active {
