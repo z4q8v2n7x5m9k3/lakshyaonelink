@@ -1,0 +1,489 @@
+/* ==========================================================================
+   Lakshya Kaushik — Clean, Premium Mobile-First Landing Screen
+   Matching the exact reference design: pure white base, Instagram halo,
+   pill CTAs (WhatsApp & Call Me), and soft ambient pastel accents.
+   ========================================================================== */
+
+:root {
+  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-dark: #0b132a;
+  --color-slate: #334155;
+  --color-muted: #94a3b8;
+  --whatsapp-green-top: #2cd56e;
+  --whatsapp-green-bot: #15b758;
+  --call-blue-top: #3aa3ff;
+  --call-blue-bot: #1971ea;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #ffffff;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-family);
+  background-color: #ffffff;
+  color: var(--color-dark);
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Ambient Pastel Edge Glows
+   ========================================================================== */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(85px);
+  z-index: 0;
+}
+
+.glow-top-left {
+  width: 290px;
+  height: 290px;
+  top: -60px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.28) 0%, transparent 70%);
+}
+
+.glow-top-right {
+  width: 290px;
+  height: 290px;
+  top: -50px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.22) 0%, transparent 70%);
+}
+
+.glow-bottom-left {
+  width: 320px;
+  height: 320px;
+  bottom: -90px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.24) 0%, transparent 70%);
+}
+
+.glow-bottom-right {
+  width: 320px;
+  height: 320px;
+  bottom: -90px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(253, 164, 175, 0.26) 0%, transparent 70%);
+}
+
+/* ==========================================================================
+   Main Contact Screen Shell
+   ========================================================================== */
+.contact-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 48px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Instagram Halo & Top Section
+   ========================================================================== */
+.instagram-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Concentric Radar Halo Rings */
+.halo-container {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.halo-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.ring-0 {
+  width: 130px;
+  height: 130px;
+  border: 1px solid rgba(225, 48, 108, 0.16);
+}
+
+.ring-1 {
+  width: 195px;
+  height: 195px;
+  border: 1px solid rgba(225, 48, 108, 0.11);
+}
+
+.ring-2 {
+  width: 270px;
+  height: 270px;
+  border: 1px solid rgba(225, 48, 108, 0.07);
+}
+
+.ring-3 {
+  width: 345px;
+  height: 345px;
+  border: 1px solid rgba(225, 48, 108, 0.035);
+}
+
+/* Instagram App Icon Box */
+.instagram-icon-box {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  border-radius: 27px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  box-shadow: 
+    0 22px 50px -8px rgba(220, 39, 67, 0.38),
+    0 8px 18px rgba(188, 24, 136, 0.22),
+    0 0 35px rgba(240, 148, 51, 0.22);
+  transition: transform 0.26s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.26s ease;
+  cursor: pointer;
+}
+
+.instagram-icon-box:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 
+    0 26px 56px -6px rgba(220, 39, 67, 0.46),
+    0 10px 22px rgba(188, 24, 136, 0.28),
+    0 0 45px rgba(240, 148, 51, 0.3);
+}
+
+.instagram-icon-box:active {
+  transform: scale(0.96);
+}
+
+.instagram-camera-svg {
+  width: 54px;
+  height: 54px;
+  display: block;
+}
+
+/* Headings */
+.heading-group {
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;
+}
+
+.sub-heading {
+  font-family: var(--font-family);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.main-heading {
+  font-family: var(--font-family);
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin-top: 3px;
+  background: linear-gradient(90deg, #ff5e36 0%, #e02476 34%, #8e2de2 72%, #5533ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Instagram Profile Pill */
+.profile-pill {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  padding: 9px 24px 9px 18px;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 10px 26px -4px rgba(225, 48, 108, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.profile-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 14px 30px -4px rgba(225, 48, 108, 0.22),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.profile-pill:active {
+  transform: scale(0.97);
+}
+
+.pill-icon {
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.pill-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pill-divider {
+  width: 1px;
+  height: 17px;
+  background-color: #e2e8f0;
+  margin: 0 13px;
+}
+
+.pill-handle {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-dark);
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   Two Contact CTAs (WhatsApp & Call Me)
+   ========================================================================== */
+.cta-section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 335px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.cta-btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px 0 18px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.24s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2.5px);
+}
+
+.cta-btn:active {
+  transform: scale(0.97);
+}
+
+.cta-left {
+  display: flex;
+  align-items: center;
+}
+
+.cta-icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+}
+
+.btn-divider {
+  width: 1px;
+  height: 26px;
+  background-color: rgba(255, 255, 255, 0.32);
+  margin-left: 14px;
+}
+
+.cta-label {
+  font-family: var(--font-family);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  margin-left: 4px;
+}
+
+.cta-arrow {
+  width: 12px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.cta-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cta-btn:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* 1. WHATSAPP Button */
+.btn-whatsapp {
+  background: linear-gradient(180deg, var(--whatsapp-green-top) 0%, var(--whatsapp-green-bot) 100%);
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.55),
+    0 14px 28px -4px rgba(21, 183, 88, 0.44);
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.65),
+    0 18px 34px -4px rgba(21, 183, 88, 0.52);
+}
+
+.whatsapp-icon-wrap svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* 2. CALL ME Button */
+.btn-call {
+  background: linear-gradient(180deg, var(--call-blue-top) 0%, var(--call-blue-bot) 100%);
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.55),
+    0 14px 28px -4px rgba(25, 113, 234, 0.44);
+}
+
+.btn-call:hover {
+  box-shadow: 
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.65),
+    0 18px 34px -4px rgba(25, 113, 234, 0.52);
+}
+
+.call-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Phone Number Display */
+.phone-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.phone-display .line {
+  width: 32px;
+  height: 1px;
+  background-color: var(--color-muted);
+  opacity: 0.7;
+}
+
+.phone-link {
+  font-family: var(--font-family);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-slate);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.phone-link:hover {
+  color: #1a74ec;
+}
+
+/* ==========================================================================
+   Bottom Decorative Ambient Waves
+   ========================================================================== */
+.bottom-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bottom-waves svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive Minor Viewport Tuning
+   ========================================================================== */
+@media (max-height: 720px) {
+  .contact-card {
+    padding: 30px 20px 40px;
+  }
+  .instagram-icon-box {
+    width: 88px;
+    height: 88px;
+    border-radius: 23px;
+  }
+  .instagram-camera-svg {
+    width: 48px;
+    height: 48px;
+  }
+  .heading-group {
+    margin-top: 24px;
+  }
+  .sub-heading {
+    font-size: 17px;
+  }
+  .main-heading {
+    font-size: 31px;
+  }
+  .cta-section {
+    margin-top: 32px;
+    gap: 14px;
+  }
+  .cta-btn {
+    height: 54px;
+  }
+}
