@@ -351,27 +351,56 @@ body {
     0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
-/* Icon Box & SVGs */
+/* Icon Box & Images */
 .tile-icon-box {
   width: 44px;
   height: 44px;
   flex: 0 0 44px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s ease;
+  overflow: hidden;
 }
 
 .action-tile:hover .tile-icon-box {
   transform: scale(1.06);
 }
 
-.tile-official-svg {
-  width: 44px;
-  height: 44px;
+.tile-brand-icon {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
   display: block;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box-instagram .tile-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  box-shadow: 0 3px 10px rgba(225, 48, 108, 0.2);
+}
+
+.icon-box-whatsapp .tile-brand-icon {
+  width: 42px;
+  height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.icon-box-call {
+  background: rgba(2, 132, 199, 0.08);
+  border-radius: 12px;
+}
+
+.call-svg-icon {
+  width: 22px;
+  height: 22px;
+  color: #0284c7;
 }
 
 .insta-gradient-label {

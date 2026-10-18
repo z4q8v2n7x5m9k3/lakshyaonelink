@@ -75,24 +75,10 @@
     <!-- Direct Action Deck: 1. Instagram, 2. WhatsApp, 3. Call Direct -->
     <section class="action-deck" aria-label="Direct actions">
       
-      <!-- Action 1: Instagram (Top - Official Inline SVG) -->
+      <!-- Action 1: Instagram (Top - Official Icon) -->
       <a href="https://www.instagram.com/serenmuzic/" target="_blank" rel="noopener noreferrer" class="action-tile action-instagram" aria-label="Follow on Instagram">
-        <div class="tile-icon-box">
-          <svg viewBox="0 0 48 48" class="tile-official-svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="instaAppSvgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#f09433"/>
-                <stop offset="25%" stop-color="#e6683c"/>
-                <stop offset="50%" stop-color="#dc2743"/>
-                <stop offset="75%" stop-color="#cc2366"/>
-                <stop offset="100%" stop-color="#bc1888"/>
-              </linearGradient>
-            </defs>
-            <rect width="48" height="48" rx="14" fill="url(#instaAppSvgGrad)"/>
-            <rect x="11" y="11" width="26" height="26" rx="7" fill="none" stroke="#ffffff" stroke-width="2.6"/>
-            <circle cx="24" cy="24" r="5.6" fill="none" stroke="#ffffff" stroke-width="2.6"/>
-            <circle cx="30.8" cy="17.2" r="1.6" fill="#ffffff"/>
-          </svg>
+        <div class="tile-icon-box icon-box-instagram">
+          <img src="images/instagram-official.png" alt="Instagram" class="tile-brand-icon" />
         </div>
         <div class="tile-copy">
           <span class="tile-title">@serenmuzic</span>
@@ -103,13 +89,10 @@
         </span>
       </a>
 
-      <!-- Action 2: WhatsApp (Second - 100% Inlined Official SVG) -->
+      <!-- Action 2: WhatsApp (Second - Official Green PNG) -->
       <a href="https://wa.me/916396200867?text=Hi%20Lakshya%2C%20I%27d%20like%20to%20enquire%20about%20a%20live%20performance." target="_blank" rel="noopener noreferrer" class="action-tile action-whatsapp" aria-label="Book on WhatsApp">
-        <div class="tile-icon-box">
-          <svg viewBox="0 0 48 48" class="tile-official-svg" aria-hidden="true">
-            <rect width="48" height="48" rx="14" fill="#25D366"/>
-            <path fill="#ffffff" d="M35 29c-.5-.2-2.9-1.4-3.3-1.6-.4-.2-.8-.2-1.1.3-.3.5-1.2 1.6-1.5 1.9-.3.3-.6.4-1.1.1-.5-.2-2.1-.8-4-2.5-1.5-1.3-2.5-3-2.8-3.5-.3-.5 0-.8.2-1 .2-.2.5-.6.7-.9.2-.3.3-.5.5-.8.1-.3.1-.6 0-.8s-1.1-2.7-1.5-3.7c-.4-1-.8-.9-1.1-.9h-1c-.4 0-1 .1-1.5.7-.5.5-2 2-2 4.7s2 5.4 2.3 5.8c.3.4 3.9 6 9.5 8.4 1.3.6 2.4 1 3.2 1.3 1.4.4 2.6.4 3.6.2 1.1-.2 3.3-1.4 3.8-2.7.5-1.3.5-2.4.3-2.7-.2-.3-.6-.4-1.1-.7zm-11 11c-2.8 0-5.5-.7-7.8-2.1l-.6-.3-5.8 1.5 1.6-5.6-.4-.6C9.6 30.5 8.8 27.8 8.8 25c0-8.4 6.8-15.2 15.2-15.2 4.1 0 7.9 1.6 10.7 4.5 2.9 2.9 4.5 6.7 4.5 10.7 0 8.4-6.8 15-15.2 15z"/>
-          </svg>
+        <div class="tile-icon-box icon-box-whatsapp">
+          <img src="images/whatsapp-official.png" alt="WhatsApp" class="tile-brand-icon" />
         </div>
         <div class="tile-copy">
           <span class="tile-title">WhatsApp Booking</span>
@@ -120,12 +103,11 @@
         </span>
       </a>
 
-      <!-- Action 3: Direct Call (Third - Official Blue Inlined SVG) -->
+      <!-- Action 3: Direct Call (Third - Official Blue Box) -->
       <a href="tel:+916396200867" class="action-tile action-call" aria-label="Direct Phone Call">
-        <div class="tile-icon-box">
-          <svg viewBox="0 0 48 48" class="tile-official-svg" aria-hidden="true">
-            <rect width="48" height="48" rx="14" fill="#0284c7"/>
-            <path fill="#ffffff" d="M32.8 28.9l-3.2-1.6c-.9-.4-2-.2-2.7.5l-1.3 1.6c-.6-.4-1.7-.9-2.7-1.9-1.1-1.1-1.6-2.1-1.9-2.7l1.6-1.3c.7-.7.9-1.8.5-2.7l-1.6-3.2c-.5-1-1.7-1.5-2.8-1l-2.4 1.2c-1 .5-1.6 1.6-1.5 2.7.4 3 2.1 6.8 5.6 10.3 3.5 3.5 7.3 5.2 10.3 5.6 1.1.1 2.2-.5 2.7-1.5l1.2-2.4c.5-1.1 0-2.3-1-2.8z"/>
+        <div class="tile-icon-box icon-box-call">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="call-svg-icon">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.94.36 1.88.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.93.34 1.87.58 2.81.7A2 2 0 0 1 22 16.92Z" fill="currentColor"/>
           </svg>
         </div>
         <div class="tile-copy">
@@ -154,7 +136,7 @@
 
     <!-- Minimalist Clean Footer -->
     <footer class="page-footer">
-      <p class="copyright-text">© 2026 LAKSHYA KAUSHIK • LIVE MUSIC</p>
+      <p class="copyright-text">© 2026 LAKSHYA KAUSHIK • SERENMUZIC</p>
     </footer>
 
   </main>
