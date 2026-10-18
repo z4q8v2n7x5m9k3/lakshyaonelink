@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function shareProfile() {
     const shareData = {
       title: 'Lakshya Kaushik | Singer, Guitarist & Live Performer',
-      text: 'Check out Lakshya Kaushik — Singer & Acoustic Performer for live gigs, private events, weddings and restaurant residencies.',
+      text: 'Lakshya Kaushik — Singer & Live Acoustic Artist for events, private galas, and lounge residencies.',
       url: window.location.href
     };
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('copyProfileLink')?.addEventListener('click', copyLink);
 
   // Save Contact (vCard Download)
-  document.getElementById('saveContact')?.addEventListener('click', () => {
+  const downloadVcard = () => {
     const vcard = [
       'BEGIN:VCARD',
       'VERSION:3.0',
@@ -74,6 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
-    showToast('Contact card (.vcf) downloaded');
-  });
+    showToast('Contact card (.vcf) saved');
+  };
+
+  document.getElementById('saveContact')?.addEventListener('click', downloadVcard);
+  document.getElementById('saveContactBtn')?.addEventListener('click', downloadVcard);
 });

@@ -1,18 +1,34 @@
 /* ==========================================================================
-   Lakshya Kaushik — Clean, Premium Mobile-First Landing Screen
-   Matching the exact reference design: pure white base, Instagram halo,
-   pill CTAs (WhatsApp & Call Me), and soft ambient pastel accents.
+   Lakshya Kaushik — Ultra-Premium Quiet Luxury Artist Card
+   Aesthetic: Obsidian Noir, Brushed Titanium & Warm Champagne Gold
+   Zero Tacky Rainbow Gradients • High-Taste Editorial Typography
    ========================================================================== */
 
 :root {
-  --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --color-dark: #0b132a;
-  --color-slate: #334155;
-  --color-muted: #94a3b8;
-  --whatsapp-green-top: #2cd56e;
-  --whatsapp-green-bot: #15b758;
-  --call-blue-top: #3aa3ff;
-  --call-blue-bot: #1971ea;
+  --bg-deep: #09090b;
+  --bg-card: #111116;
+  --bg-tile: rgba(24, 24, 30, 0.75);
+  --bg-tile-hover: rgba(32, 32, 40, 0.9);
+
+  --text-main: #ffffff;
+  --text-sub: #a1a1aa;
+  --text-muted: #71717a;
+
+  --accent-gold: #c8a265;
+  --accent-champagne: #e4caa0;
+  --accent-emerald: #10b981;
+  --accent-blue: #38bdf8;
+  --accent-rose: #f43f5e;
+
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-tile: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(200, 162, 101, 0.28);
+
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --shadow-card: 0 32px 80px -16px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.06);
 }
 
 *, *::before, *::after {
@@ -22,468 +38,490 @@
 }
 
 html {
-  background-color: #ffffff;
-  -webkit-text-size-adjust: 100%;
+  background-color: var(--bg-deep);
+  color-scheme: dark;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  font-family: var(--font-family);
-  background-color: #ffffff;
-  color: var(--color-dark);
+  font-family: var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
   position: relative;
   overflow-x: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==========================================================================
-   Ambient Pastel Edge Glows
-   ========================================================================== */
-.ambient-glow {
+/* Ambient Backstage Lighting Vignette (Warm & Subtle) */
+.ambient-mesh {
   position: fixed;
-  border-radius: 50%;
+  inset: 0;
   pointer-events: none;
-  filter: blur(85px);
+  background: 
+    radial-gradient(circle at 50% 12%, rgba(200, 162, 101, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(244, 63, 94, 0.04) 0%, transparent 45%),
+    var(--bg-deep);
   z-index: 0;
 }
 
-.glow-top-left {
-  width: 290px;
-  height: 290px;
-  top: -60px;
-  left: -80px;
-  background: radial-gradient(circle, rgba(244, 114, 182, 0.28) 0%, transparent 70%);
-}
-
-.glow-top-right {
-  width: 290px;
-  height: 290px;
-  top: -50px;
-  right: -80px;
-  background: radial-gradient(circle, rgba(251, 146, 60, 0.22) 0%, transparent 70%);
-}
-
-.glow-bottom-left {
-  width: 320px;
-  height: 320px;
-  bottom: -90px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(192, 132, 252, 0.24) 0%, transparent 70%);
-}
-
-.glow-bottom-right {
-  width: 320px;
-  height: 320px;
-  bottom: -90px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(253, 164, 175, 0.26) 0%, transparent 70%);
-}
-
-/* ==========================================================================
-   Main Contact Screen Shell
-   ========================================================================== */
-.contact-card {
+/* Outer Layout Shell */
+.luxury-shell {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 420px;
-  min-height: 100vh;
-  min-height: 100dvh;
+  max-width: 440px;
   margin: 0 auto;
-  padding: 48px 24px 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 24px 16px;
 }
 
-/* ==========================================================================
-   Instagram Halo & Top Section
-   ========================================================================== */
-.instagram-section {
+/* Main Luxury Card Container */
+.luxury-card {
   position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 32px;
+  padding: 24px 22px 28px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
 }
 
-/* Concentric Radar Halo Rings */
-.halo-container {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  height: 350px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.halo-ring {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.ring-0 {
-  width: 130px;
-  height: 130px;
-  border: 1px solid rgba(225, 48, 108, 0.16);
-}
-
-.ring-1 {
-  width: 195px;
-  height: 195px;
-  border: 1px solid rgba(225, 48, 108, 0.11);
-}
-
-.ring-2 {
-  width: 270px;
-  height: 270px;
-  border: 1px solid rgba(225, 48, 108, 0.07);
-}
-
-.ring-3 {
-  width: 345px;
-  height: 345px;
-  border: 1px solid rgba(225, 48, 108, 0.035);
-}
-
-/* Instagram App Icon Box */
-.instagram-icon-box {
-  position: relative;
-  z-index: 2;
-  width: 100px;
-  height: 100px;
-  border-radius: 27px;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  display: grid;
-  place-items: center;
-  text-decoration: none;
-  box-shadow: 
-    0 22px 50px -8px rgba(220, 39, 67, 0.38),
-    0 8px 18px rgba(188, 24, 136, 0.22),
-    0 0 35px rgba(240, 148, 51, 0.22);
-  transition: transform 0.26s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.26s ease;
-  cursor: pointer;
-}
-
-.instagram-icon-box:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 
-    0 26px 56px -6px rgba(220, 39, 67, 0.46),
-    0 10px 22px rgba(188, 24, 136, 0.28),
-    0 0 45px rgba(240, 148, 51, 0.3);
-}
-
-.instagram-icon-box:active {
-  transform: scale(0.96);
-}
-
-.instagram-camera-svg {
-  width: 54px;
-  height: 54px;
-  display: block;
-}
-
-/* Headings */
-.heading-group {
-  position: relative;
-  z-index: 2;
-  margin-top: 36px;
-}
-
-.sub-heading {
-  font-family: var(--font-family);
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: var(--color-dark);
-  line-height: 1.2;
-}
-
-.main-heading {
-  font-family: var(--font-family);
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1.15;
-  margin-top: 3px;
-  background: linear-gradient(90deg, #ff5e36 0%, #e02476 34%, #8e2de2 72%, #5533ea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Instagram Profile Pill */
-.profile-pill {
-  position: relative;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  margin-top: 18px;
-  padding: 9px 24px 9px 18px;
-  border-radius: 9999px;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 
-    0 10px 26px -4px rgba(225, 48, 108, 0.16),
-    0 2px 8px rgba(0, 0, 0, 0.04);
-  text-decoration: none;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-}
-
-.profile-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 14px 30px -4px rgba(225, 48, 108, 0.22),
-    0 3px 10px rgba(0, 0, 0, 0.06);
-}
-
-.profile-pill:active {
-  transform: scale(0.97);
-}
-
-.pill-icon {
-  width: 20px;
-  height: 20px;
-  display: grid;
-  place-items: center;
-}
-
-.pill-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.pill-divider {
-  width: 1px;
-  height: 17px;
-  background-color: #e2e8f0;
-  margin: 0 13px;
-}
-
-.pill-handle {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--color-dark);
-  letter-spacing: -0.01em;
-}
-
-/* ==========================================================================
-   Two Contact CTAs (WhatsApp & Call Me)
-   ========================================================================== */
-.cta-section {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 335px;
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-}
-
-.cta-btn {
-  width: 100%;
-  height: 60px;
-  border-radius: 9999px;
+/* Top Card Header */
+.card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 22px 0 18px;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.24s ease;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  margin-bottom: 24px;
 }
 
-.cta-btn:hover {
-  transform: translateY(-2.5px);
-}
-
-.cta-btn:active {
-  transform: scale(0.97);
-}
-
-.cta-left {
-  display: flex;
+.status-indicator {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  padding: 6px 13px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.22);
 }
 
-.cta-icon {
-  width: 28px;
-  height: 28px;
+.status-dot {
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
+}
+
+.status-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #a7f3d0;
+  letter-spacing: 0.02em;
+}
+
+.save-contact-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-sub);
   display: grid;
   place-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.btn-divider {
-  width: 1px;
-  height: 26px;
-  background-color: rgba(255, 255, 255, 0.32);
-  margin-left: 14px;
+.save-contact-icon-btn svg {
+  width: 17px;
+  height: 17px;
 }
 
-.cta-label {
-  font-family: var(--font-family);
-  font-size: 14.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+.save-contact-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Artist Identity Section */
+.identity-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  margin-bottom: 18px;
+}
+
+.avatar-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 3.5px;
+  background: linear-gradient(145deg, rgba(200, 162, 101, 0.6) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(200, 162, 101, 0.3) 100%);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.6);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background-color: #1a1e26;
+}
+
+.verified-seal {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  border: 2px solid var(--bg-card);
   color: #ffffff;
-  margin-left: 4px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.4);
 }
 
-.cta-arrow {
-  width: 12px;
-  height: 16px;
+.verified-seal svg {
+  width: 14px;
+  height: 14px;
+}
+
+.name-block {
+  margin-bottom: 12px;
+}
+
+.artist-name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.artist-title {
+  margin-top: 5px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
+}
+
+/* T-Series Academy Badge */
+.tseries-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 4px;
+  padding: 5px 13px 5px 6px;
+  border-radius: 9999px;
+  background: rgba(229, 9, 20, 0.07);
+  border: 1px solid rgba(229, 9, 20, 0.24);
+}
+
+.tseries-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  padding: 2.5px;
+  flex-shrink: 0;
+}
+
+.tseries-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tseries-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fca5a5;
+  letter-spacing: 0.01em;
+}
+
+/* Meta Tags Row */
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.meta-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-sub);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 12px;
+  border-radius: 9999px;
+}
+
+/* Action Deck (Minimal, Quiet Luxury Tiles) */
+.action-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 24px;
+}
+
+.action-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border-radius: 18px;
+  background: var(--bg-tile);
+  border: 1px solid var(--border-tile);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.action-tile:hover {
+  background: var(--bg-tile-hover);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.action-tile:active {
+  transform: scale(0.98);
+}
+
+.tile-icon-box {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 13px;
   display: grid;
   place-items: center;
   transition: transform 0.2s ease;
 }
 
-.cta-arrow svg {
-  width: 100%;
-  height: 100%;
+.action-tile:hover .tile-icon-box {
+  transform: scale(1.06);
 }
 
-.cta-btn:hover .cta-arrow {
-  transform: translateX(3px);
+/* WhatsApp Icon Styling */
+.icon-whatsapp {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.26);
+  color: #34d399;
 }
 
-/* 1. WHATSAPP Button */
-.btn-whatsapp {
-  background: linear-gradient(180deg, var(--whatsapp-green-top) 0%, var(--whatsapp-green-bot) 100%);
-  box-shadow: 
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.55),
-    0 14px 28px -4px rgba(21, 183, 88, 0.44);
-}
-
-.btn-whatsapp:hover {
-  box-shadow: 
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.65),
-    0 18px 34px -4px rgba(21, 183, 88, 0.52);
-}
-
-.whatsapp-icon-wrap svg {
-  width: 26px;
-  height: 26px;
-}
-
-/* 2. CALL ME Button */
-.btn-call {
-  background: linear-gradient(180deg, var(--call-blue-top) 0%, var(--call-blue-bot) 100%);
-  box-shadow: 
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.55),
-    0 14px 28px -4px rgba(25, 113, 234, 0.44);
-}
-
-.btn-call:hover {
-  box-shadow: 
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.65),
-    0 18px 34px -4px rgba(25, 113, 234, 0.52);
-}
-
-.call-icon-wrap svg {
+.icon-whatsapp svg {
   width: 22px;
   height: 22px;
 }
 
-/* Phone Number Display */
-.phone-display {
+/* Call Icon Styling */
+.icon-call {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.26);
+  color: #38bdf8;
+}
+
+.icon-call svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Instagram Icon Styling */
+.icon-instagram {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.26);
+  color: #fb7185;
+}
+
+.icon-instagram svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* Tile Copy Text */
+.tile-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.tile-title {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.tile-subtitle {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-sub);
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tile-chevron {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.tile-chevron svg {
+  width: 14px;
+  height: 14px;
+}
+
+.action-tile:hover .tile-chevron {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* Save Contact Button */
+.vcard-section {
+  margin-top: 18px;
+}
+
+.btn-save-vcard {
+  width: 100%;
+  height: 48px;
+  border-radius: 9999px;
+  background: rgba(200, 162, 101, 0.08);
+  border: 1px solid var(--border-gold);
+  color: var(--accent-champagne);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin-top: 14px;
+  gap: 9px;
+  cursor: pointer;
+  transition: all 0.22s ease;
 }
 
-.phone-display .line {
-  width: 32px;
-  height: 1px;
-  background-color: var(--color-muted);
-  opacity: 0.7;
+.btn-save-vcard svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--accent-gold);
 }
 
-.phone-link {
-  font-family: var(--font-family);
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--color-slate);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.btn-save-vcard:hover {
+  background: rgba(200, 162, 101, 0.16);
+  border-color: rgba(200, 162, 101, 0.45);
+  transform: translateY(-1px);
 }
 
-.phone-link:hover {
-  color: #1a74ec;
+.btn-save-vcard:active {
+  transform: scale(0.98);
 }
 
-/* ==========================================================================
-   Bottom Decorative Ambient Waves
-   ========================================================================== */
-.bottom-waves {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 140px;
+/* Minimalist Card Footer */
+.card-footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.powered-tag {
+  font-size: 10px;
+  color: #52525b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.powered-tag strong {
+  color: var(--text-sub);
+  font-weight: 700;
+}
+
+/* Toast Message */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  background: rgba(24, 24, 30, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-gold);
+  color: var(--accent-champagne);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
 }
 
-.bottom-waves svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.toast.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
 }
 
-/* ==========================================================================
-   Responsive Minor Viewport Tuning
-   ========================================================================== */
-@media (max-height: 720px) {
-  .contact-card {
-    padding: 30px 20px 40px;
+/* Responsive Tuning */
+@media (max-width: 380px) {
+  .luxury-shell {
+    padding: 14px 10px;
   }
-  .instagram-icon-box {
-    width: 88px;
-    height: 88px;
-    border-radius: 23px;
+  .luxury-card {
+    padding: 20px 16px 24px;
+    border-radius: 26px;
   }
-  .instagram-camera-svg {
-    width: 48px;
-    height: 48px;
-  }
-  .heading-group {
-    margin-top: 24px;
-  }
-  .sub-heading {
-    font-size: 17px;
-  }
-  .main-heading {
-    font-size: 31px;
-  }
-  .cta-section {
-    margin-top: 32px;
-    gap: 14px;
-  }
-  .cta-btn {
-    height: 54px;
+  .artist-name {
+    font-size: 23px;
   }
 }
