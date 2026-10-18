@@ -23,8 +23,10 @@
       </div>
       <button class="save-contact-icon-btn" id="saveContactBtn" type="button" title="Save Contact to Phone" aria-label="Save Contact">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17 21v-8H7v8M7 3v5h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <line x1="19" y1="8" x2="19" y2="14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="22" y1="11" x2="16" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
       </button>
     </header>
@@ -70,10 +72,24 @@
       </div>
     </section>
 
-    <!-- Direct Action Deck (Official Icons, Large Tap Targets) -->
+    <!-- Direct Action Deck: 1. Instagram, 2. WhatsApp, 3. Call Direct -->
     <section class="action-deck" aria-label="Direct actions">
       
-      <!-- Action 1: WhatsApp (Official WhatsApp Emblem) -->
+      <!-- Action 1: Instagram (Top) -->
+      <a href="https://www.instagram.com/serenmuzic/" target="_blank" rel="noopener noreferrer" class="action-tile action-instagram" aria-label="Follow on Instagram">
+        <div class="tile-icon-box">
+          <img src="images/instagram-official.png" alt="Instagram" class="tile-official-img" />
+        </div>
+        <div class="tile-copy">
+          <span class="tile-title">@serenmuzic</span>
+          <span class="tile-subtitle">Follow on <span class="insta-gradient-label">Instagram</span></span>
+        </div>
+        <span class="tile-chevron" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <!-- Action 2: WhatsApp (Second) -->
       <a href="https://wa.me/916396200867?text=Hi%20Lakshya%2C%20I%27d%20like%20to%20enquire%20about%20a%20live%20performance." target="_blank" rel="noopener noreferrer" class="action-tile action-whatsapp" aria-label="Book on WhatsApp">
         <div class="tile-icon-box">
           <img src="images/whatsapp-official.svg" alt="WhatsApp" class="tile-official-img" />
@@ -87,7 +103,7 @@
         </span>
       </a>
 
-      <!-- Action 2: Direct Call -->
+      <!-- Action 3: Direct Call (Third) -->
       <a href="tel:+916396200867" class="action-tile action-call" aria-label="Direct Phone Call">
         <div class="tile-icon-box icon-call-box">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="call-svg-icon">
@@ -103,28 +119,16 @@
         </span>
       </a>
 
-      <!-- Action 3: Instagram (Official Instagram App Icon & Gradient Text) -->
-      <a href="https://www.instagram.com/serenmuzic/" target="_blank" rel="noopener noreferrer" class="action-tile action-instagram" aria-label="Follow on Instagram">
-        <div class="tile-icon-box">
-          <img src="images/instagram-official.png" alt="Instagram" class="tile-official-img" />
-        </div>
-        <div class="tile-copy">
-          <span class="tile-title">@serenmuzic</span>
-          <span class="tile-subtitle">Follow on <span class="insta-gradient-label">Instagram</span></span>
-        </div>
-        <span class="tile-chevron" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </a>
-
     </section>
 
-    <!-- Save Contact Premium Button -->
+    <!-- Save Contact Clean Elevated Button -->
     <div class="vcard-section">
       <button type="button" class="btn-save-vcard" id="saveContact">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17 21v-8H7v8M7 3v5h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="contact-user-svg">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+          <line x1="19" y1="8" x2="19" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22" y1="11" x2="16" y2="11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
         </svg>
         <span>Save Contact</span>
       </button>
